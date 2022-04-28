@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 require("dotenv").config();
+const bodyParser = require("body-parser");
 
 console.log("Hello World");
 // console.log(process.env.MESSAGE_STYLE);
@@ -10,6 +11,8 @@ console.log("Hello World");
 
 const absolutePath = __dirname + "/views/index.html";
 const publicPath = __dirname + "/public";
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function (req, res, next) {
   console.log(req.method + " " + req.path + " - " + req.ip);
