@@ -5,9 +5,9 @@ const bodyParser = require("body-parser");
 
 console.log("Hello World");
 // console.log(process.env.MESSAGE_STYLE);
-// app.get("/", function (req, res) {
-//   res.send("Hello Express");
-// });
+app.get("/", function (req, res) {
+  res.send("Hello Express");
+});
 
 const absolutePath = __dirname + "/views/index.html";
 const publicPath = __dirname + "/public";
