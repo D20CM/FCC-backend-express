@@ -8,6 +8,8 @@ console.log("Hello World");
 // });
 
 const absolutePath = __dirname + "/views/index.html";
+const publicPath = __dirname + "/public";
+app.use("/public", express.static(publicPath));
 
 app.get("/", function (req, res) {
   res.sendFile(absolutePath);
